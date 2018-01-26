@@ -1,22 +1,25 @@
 {
-  "name": "winston-wrapper",
-  "version": "1.0.0",
+  "name": "winston-simple-wrapper",
+  "version": "0.0.1",
   "description": "a simple wrapper on winston.js",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test"
   },
   "keywords": [
     "winston"
   ],
   "author": "alex404A",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "logform": "^1.2.2",
     "winston": "^3.0.0-rc1"
   },
-  "engines" : {
-    "node" : ">=8.9.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alex404A/winston-wrapper"
   },
-  "engineStrict" : true
+  "engines": {
+    "node": ">=8.9.0"
+  },
+ "engineStrict" : true
 }
