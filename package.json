@@ -1,0 +1,22 @@
+{
+  "name": "winston-wrapper",
+  "version": "1.0.0",
+  "description": "a simple wrapper on winston.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "keywords": [
+    "winston"
+  ],
+  "author": "alex404A",
+  "license": "ISC",
+  "dependencies": {
+    "logform": "^1.2.2",
+    "winston": "^3.0.0-rc1"
+  },
+  "engines" : {
+    "node" : ">=8.9.0"
+  },
+  "engineStrict" : true
+}
