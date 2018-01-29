@@ -5,11 +5,18 @@ const { createLogger, format, transports } = require('winston');
 const { combine, timestamp, label, printf, colorize } = format;
 
 const myFormat = printf(info => {
-  if (!info.timestamp) {
-    return 'unknown'
-  }
   const now = new Date(info.timestamp)
-  const formatMsg = JSON.stringify(info.message, (name, val) => {
+  let formatMsg
+  if (info.message instanceof Error) {
+    formatMsg = errorMsg(info.message)
+  } else {
+    formatMsg = commonMsg(info.message)
+  }
+  return `${now.toLocaleDateString()} ${now.toLocaleTimeString()} ${info.level}: [${info.label}] ${formatMsg}`;
+});
+
+function commonMsg (msg) {
+  return JSON.stringify(msg, (name, val) => {
     if ( val && val.constructor === RegExp) {
       return val.toString();
     } else if ( val && val.constructor === Function) {
@@ -18,8 +25,11 @@ const myFormat = printf(info => {
       return val;
     }
   }, 2)
-  return `${now.toLocaleDateString()} ${now.toLocaleTimeString()} ${info.level}: [${info.label}] ${formatMsg}`;
-});
+}
+
+function errorMsg (err) {
+  return `\nError message: ${err.message}\nError code: ${err.code}\nError stack: ${err.stack}`
+}
 
 const defaultLabel = 'common'
 
