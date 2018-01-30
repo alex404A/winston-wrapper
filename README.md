@@ -73,36 +73,36 @@ Error stack: TypeError: Cannot read property 'c' of undefined
 
 ## API
 
-### `Factory([config])`
+#### `Factory([config])`
 
 - `config` (optional, *Object*) - If not provided, defaults to basic config, please refer to [winston](https://github.com/winstonjs/winston) to customize.
 
-### `logger.error(message, [labels])`
+#### `logger.error(message, [labels])`
 
 - `message` (*String*) - message info.
 - `labels` (optional, *String/Array*) - message label, convenient to filter in log, common will be used if not provided
 
-### `logger.warn(message, [labels])`
+#### `logger.warn(message, [labels])`
 
 - `message` (*String*) - message info.
 - `labels` (optional, *String/Array*) - message label, convenient to filter in log, common will be used if not provided
 
-### `logger.info(message, [labels])`
+#### `logger.info(message, [labels])`
 
 - `message` (*String*) - message info.
 - `labels` (optional, *String/Array*) - message label, convenient to filter in log, common will be used if not provided
 
-### `logger.verbose(message, [labels])`
+#### `logger.verbose(message, [labels])`
 
 - `message` (*String*) - message info.
 - `labels` (optional, *String/Array*) - message label, convenient to filter in log, common will be used if not provided
 
-### `logger.debug(message, [labels])`
+#### `logger.debug(message, [labels])`
 
 - `message` (*String*) - message info.
 - `labels` (optional, *String/Array*) - message label, convenient to filter in log, common will be used if not provided
 
-### `logger.silly(message, [labels])`
+#### `logger.silly(message, [labels])`
 
 - `message` (*String*) - message info.
 - `labels` (optional, *String/Array*) - message label, convenient to filter in log, common will be used if not provided
