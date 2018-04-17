@@ -106,4 +106,3 @@ Error stack: TypeError: Cannot read property 'c' of undefined
 
 - `message` (*String*) - message info.
 - `labels` (optional, *String/Array*) - message label, convenient to filter in log, common will be used if not provided
-

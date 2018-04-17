@@ -16,15 +16,19 @@ const myFormat = printf(info => {
 });
 
 function commonMsg (msg) {
-  return JSON.stringify(msg, (name, val) => {
-    if ( val && val.constructor === RegExp) {
-      return val.toString();
-    } else if ( val && val.constructor === Function) {
-      return `[Function] ${name}`;
-    } else {
-      return val;
-    }
-  }, 2)
+  if (typeof msg === 'string') {
+    return msg
+  } else {
+    return JSON.stringify(msg, (name, val) => {
+      if ( val && val.constructor === RegExp) {
+        return val.toString();
+      } else if ( val && val.constructor === Function) {
+        return `[Function] ${name}`;
+      } else {
+        return val;
+      }
+    }, 2)
+  }
 }
 
 function errorMsg (err) {
