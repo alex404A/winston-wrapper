@@ -75,7 +75,13 @@ Error stack: TypeError: Cannot read property 'c' of undefined
 
 #### `Factory([config])`
 
-- `config` (optional, *Object*) - If not provided, defaults to basic config, please refer to [winston](https://github.com/winstonjs/winston) to customize.
+- `config` (optional, *Object*) - If not provided, defaults to basic config
+  - `config.level` (optional, *String*) - The default values is 'info'
+  - `config.transports` (optional, *Array*) - Different transport config object can be subitem
+    - `transport config` (optional, *Object*) - subitem of config.transports
+      - `subitem.type` (necessary, *String*) - console/file
+      - `subitem.level` (optional, *String*) - The default value is 'info'
+      - `subitem.filename` (optional, *String*) - necessary when type is file
 
 #### `logger.error(message, [labels])`
 

@@ -1,8 +1,8 @@
 'use strict'
 
-const winston = require('winston');
-const { createLogger, format, transports } = require('winston');
+const { createLogger, format } = require('winston');
 const { combine, timestamp, label, printf, colorize } = format;
+const transportBuilder = require('./src/transportBuilder')
 
 const myFormat = printf(info => {
   const now = new Date(info.timestamp)
@@ -39,17 +39,15 @@ const defaultLabel = 'common'
 
 class Factory {
   constructor (config = {}) {
-    this.logger = createLogger(Object.assign({
+    this.logger = createLogger({
       level: 'info',
       format: combine(
         colorize(),
         timestamp(),
         myFormat
       ),
-      transports: [
-        new transports.Console()
-      ]
-    }, config));
+      transports: transportBuilder.build(config.transports)
+    });
   }
 
   error (message, label = defaultLabel) {
