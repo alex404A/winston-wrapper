@@ -8,7 +8,7 @@ const fs = require('fs')
 function build (configList = []) {
   const result = []
   if (configList.length === 0) {
-    result.push(genConsoleTransport())
+    result.push(genConsoleTransport({}))
   } else {
     for (let i = 0; i < configList.length; i++) {
       const config = configList[i]
