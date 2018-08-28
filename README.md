@@ -76,12 +76,17 @@ Error stack: TypeError: Cannot read property 'c' of undefined
 #### `Factory([config])`
 
 - `config` (optional, *Object*) - If not provided, defaults to basic config
-  - `config.level` (optional, *String*) - The default values is 'info'
-  - `config.transports` (optional, *Array*) - Different transport config object can be subitem
-    - `transport config` (optional, *Object*) - subitem of config.transports
-      - `subitem.type` (necessary, *String*) - console/file
-      - `subitem.level` (optional, *String*) - The default value is 'info'
-      - `subitem.filename` (optional, *String*) - necessary when type is file
+  - `config.transports` (optional, *Array*) - Different transport config object
+    - `console transport config` (optional, *Object*) - subitem of config.transports
+      - `type` (necessary, *String*) - console/file
+      - `level` (optional, *String*) - The default value is 'info'
+    - `file transport config` (optional, *Object*) - subitem of config.transports
+      - `type` (necessary, *String*) - console/file
+      - `level` (optional, *String*) - The default value is 'info'
+      - `filename` (optional, *String*)
+      - `datePattern` (optional, *String*) - The default value is 'YYYY-MM-DD', please refer to [winston-daily-rotate-file](https://github.com/winstonjs/winston-daily-rotate-file#options)
+      - `maxSize` (optional, *String*) - The default value is '200m', please refer to [winston-daily-rotate-file](https://github.com/winstonjs/winston-daily-rotate-file#options)
+      - `maxFiles` (optional, *Number*) - The default file is 30, please refer to [winston-daily-rotate-file](https://github.com/winstonjs/winston-daily-rotate-file#options)
 
 #### `logger.error(message, [labels])`
 

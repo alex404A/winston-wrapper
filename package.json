@@ -1,6 +1,6 @@
 {
   "name": "winston-simple-wrapper",
-  "version": "0.0.4",
+  "version": "0.2.0",
   "description": "a simple wrapper on winston.js",
   "main": "index.js",
   "scripts": {},
@@ -11,7 +11,8 @@
   "license": "MIT",
   "dependencies": {
     "logform": "^1.2.2",
-    "winston": "^3.0.0-rc1"
+    "winston": "^3.0.0-rc1",
+    "winston-daily-rotate-file": "^3.3.2"
   },
   "repository": {
     "type": "git",
