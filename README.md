@@ -15,7 +15,16 @@ npm install --save winston-simple-wrapper
 
 ``` javascript
 const { Factory } = require('winston-simple-wrapper')
-const logger = new Factory()
+const logger = new Factory({
+  transports: [{
+      type: 'console',
+      level: 'info'
+    }, {
+      type: 'file',
+      level: 'info',
+      filename: './logs/output.log'
+  }]
+})
 const obj = {a: 1}
 
 logger.error('error' + obj, ['test', 'error'])
@@ -76,11 +85,11 @@ Error stack: TypeError: Cannot read property 'c' of undefined
 #### `Factory([config])`
 
 - `config` (optional, *Object*) - If not provided, defaults to basic config
-  - `config.transports` (optional, *Array*) - Different transport config object
-    - `console transport config` (optional, *Object*) - subitem of config.transports
+  - `config.transports` (optional, *Array*) - contains different transport config object, the default value is console config
+    - `console transport config` (optional, *Object*) - console config object of config.transports
       - `type` (necessary, *String*) - console/file
       - `level` (optional, *String*) - The default value is 'info'
-    - `file transport config` (optional, *Object*) - subitem of config.transports
+    - `file transport config` (optional, *Object*) - file config object of config.transports
       - `type` (necessary, *String*) - console/file
       - `level` (optional, *String*) - The default value is 'info'
       - `filename` (optional, *String*)
